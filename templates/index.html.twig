@@ -25,7 +25,7 @@
 					{% for product in products %}
 						{% if product.quantity != 0 %}
 							<tr>
-								<td>{{ product.id | product.name }}</td>
+								<td>{{ product.id  }} / {{ product.name }}</td>
 								<td>{{ product.price }}</td>
 								<td>
 									<a href="{{path('product_augment', {'id': product.id})}}" class="text-dark text-decoration-none">
