@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row text-center">
+
+			<ul class="col-6 mx-auto list-group list-group-flush mt-5">
+				<li class="list-group-item">
+					<strong>Nom du produit :</strong>
+					{{product.name}}</li>
+				<li class="list-group-item">
+					<strong>Prix :</strong>
+					{{product.price}}</li>
+				<li class="list-group-item">
+					<strong>Quantités restantes :</strong>
+					{{product.quantity}}</li>
+				<li class="list-group-item">
+					<strong>Date de création :</strong>
+					{{product.dateCreation|date("d/m/Y")}}</li>
+				<li class="list-group-item">
+					<a href="{{path('home')}}" class="btn btn-primary my-3 mx-2">Retours a la liste des produits</a>
+					<a href="{{path('product_edit', {'id': product.id})}}" class="btn btn-warning my-3 mx-2">Modifier</a>
+					<a href="{{path('product_make_pdf', {'id' : product.id})}}" class="btn btn-muted">Créer un PDF</a>
+
+				</li>
+
+
+			</ul>
+		</div>
+	</div>
+{% endblock %}
