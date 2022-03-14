@@ -23,31 +23,31 @@
 				<tbody>
 
 					{% for product in products %}
-						{% if product.quantity != 0 %}
-							<tr>
-								<td>{{ product.name }}</td>
-								<td>{{ product.price }}</td>
-								<td>
-									<a href="{{path('product_augment', {'id': product.id})}}" class="text-dark text-decoration-none">
-										<i class="fas fa-plus"></i>
-									</a>
-									{{ product.quantity }}
-									<a href="{{path('product_decrement', {'id': product.id})}}" class="text-dark">
-										<i class="fas fa-minus"></i>
-									</a>
-								</td>
-								<td>{{ product.dateCreation|date("d/m/Y") }}</td>
-								<td>
-									<a href="{{path('product_view', {'id': product.id})}}" class="btn btn-primary">Voir</a>
-								</td>
-								<td>
-									<a href="{{path('product_edit', {'id': product.id})}}" class="btn btn-warning">Modifier</a>
+						{# {% if product.quantity != 0 %} #}
+						<tr>
+							<td>{{ product.name }}</td>
+							<td>{{ product.price }}</td>
+							<td>
+								<a href="{{path('product_augment', {'id': product.id})}}" class="text-dark text-decoration-none">
+									<i class="fas fa-plus"></i>
+								</a>
+								{{ product.quantity }}
+								<a href="{{path('product_decrement', {'id': product.id})}}" class="text-dark">
+									<i class="fas fa-minus"></i>
+								</a>
+							</td>
+							<td>{{ product.dateCreation|date("d/m/Y") }}</td>
+							<td>
+								<a href="{{path('product_view', {'id': product.id})}}" class="btn btn-primary">Voir</a>
+							</td>
+							<td>
+								<a href="{{path('product_edit', {'id': product.id})}}" class="btn btn-warning">Modifier</a>
 
-								</td>
+							</td>
 
-							</tr>
+						</tr>
 
-						{% endif %}
+						{# {% endif %} #}
 
 
 					{% endfor %}

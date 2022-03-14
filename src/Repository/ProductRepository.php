@@ -45,6 +45,22 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Product[] Returns an array of Product objects
+     */
+    
+    public function findExceptZero()
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.quantity > 0')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
+
+
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
